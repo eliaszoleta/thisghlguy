@@ -9,6 +9,7 @@ keywords:
   - "GoHighLevel tutorial beginners"
   - "GoHighLevel account setup"
 publishDate: 2025-02-15
+updatedDate: 2026-03-15
 author: "Editorial Team"
 featured: false
 relatedArticles:
