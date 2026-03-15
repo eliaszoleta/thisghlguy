@@ -1,7 +1,7 @@
 ---
 title: "How to Create Automations in GoHighLevel (Step-by-Step Guide)"
 description: "Learn how to build powerful automations in GoHighLevel from scratch. This step-by-step guide covers triggers, actions, conditions, and real-world workflow examples."
-category: "gohighlevel-tutorials"
+category: "gohighlevel-automation"
 keywords:
   - "how to create automations in GoHighLevel"
   - "GoHighLevel automation tutorial"
