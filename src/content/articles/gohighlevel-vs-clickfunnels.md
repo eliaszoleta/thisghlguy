@@ -70,7 +70,7 @@ At the same price point, **GoHighLevel provides significantly more value**. For 
 
 ## Funnel Builder: How Do They Compare?
 
-ClickFunnels was *built* for funnels. Its funnel builder is intuitive, with a clean drag-and-drop interface and a large library of proven templates. It remains one of the best pure funnel experiences available.
+ClickFunnels was **built** for funnels. Its funnel builder is intuitive, with a clean drag-and-drop interface and a large library of proven templates. It remains one of the best pure funnel experiences available.
 
 GoHighLevel's funnel builder is capable and covers all the same ground — opt-in pages, sales pages, order forms, upsells, downsells, and thank-you pages. It's slightly less polished than ClickFunnels' builder, but it's gotten significantly better with each update.
 

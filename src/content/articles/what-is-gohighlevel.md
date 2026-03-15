@@ -32,7 +32,7 @@ faqs:
 
 GoHighLevel (commonly shortened to GHL) is one of the most talked-about platforms in the digital marketing world — and for good reason. It promises to replace a dozen different tools with one subscription, built specifically for agencies and modern marketers.
 
-But what exactly *is* GoHighLevel, and what can it actually do?
+But what exactly **is** GoHighLevel, and what can it actually do?
 
 This guide gives you everything — what the platform does, who it's for, what's included, and how it stacks up.
 
@@ -179,7 +179,7 @@ GoHighLevel is an excellent fit if you:
 - Need serious marketing automation (not just basic email sequences)
 - Work with local businesses that need reputation management and bookings
 
-It may *not* be the best fit if you:
+It may **not** be the best fit if you:
 
 - Are a solo blogger or e-commerce brand who just needs basic email marketing
 - Prefer extremely simple, minimal tools

@@ -181,7 +181,7 @@ Here's what a growing GHL SaaS business looks like:
 | Scaling | 50 | $9,850 | $497 | $9,353 |
 | Mature | 100 | $19,700 | $497 | $19,203 |
 
-*Based on $197/month per client pricing. GHL cost stays fixed as you scale.*
+Based on $197/month per client pricing. GHL cost stays fixed as you scale.
 
 This is why SaaS Mode is such a compelling business model — the economics improve dramatically as you add clients because your primary cost is fixed.
 

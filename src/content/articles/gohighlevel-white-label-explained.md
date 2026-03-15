@@ -36,7 +36,7 @@ White labeling is one of GoHighLevel's most valuable features for agencies — a
 
 White labeling means rebranding a product to make it look like yours. With GoHighLevel's white-label features, you take the GoHighLevel platform and present it to clients under your own brand name, logo, and domain.
 
-From the client's perspective, they're using *your* software — not GoHighLevel. They log in at your custom URL, see your logo in the header, receive emails from your domain, and interact with a product that carries your brand identity.
+From the client's perspective, they're using **your** software — not GoHighLevel. They log in at your custom URL, see your logo in the header, receive emails from your domain, and interact with a product that carries your brand identity.
 
 GoHighLevel remains invisible in the background. You own the client relationship.
 

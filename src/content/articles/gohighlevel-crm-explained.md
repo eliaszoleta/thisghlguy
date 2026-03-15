@@ -192,7 +192,7 @@ For agencies managing multiple clients who need SMS, automation, and sub-account
 
 ## The Bottom Line
 
-GoHighLevel's CRM is built for agencies and businesses that need contact management *integrated* with their marketing tools — not bolted on as an afterthought. The combination of pipelines, smart lists, a unified inbox, and native automation is genuinely powerful and hard to match at this price point.
+GoHighLevel's CRM is built for agencies and businesses that need contact management **integrated** with their marketing tools — not bolted on as an afterthought. The combination of pipelines, smart lists, a unified inbox, and native automation is genuinely powerful and hard to match at this price point.
 
 If you're currently managing client relationships across a CRM, email platform, and SMS tool separately, migrating to GoHighLevel's unified CRM will save you significant time and money.
 

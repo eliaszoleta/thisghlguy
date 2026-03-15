@@ -96,7 +96,7 @@ Agency Pro adds the most advanced white-labeling features on top of everything i
 
 ## What Costs Extra (Usage Fees)
 
-GoHighLevel charges separately for certain usage-based services. These are *not* included in the flat monthly fee:
+GoHighLevel charges separately for certain usage-based services. These are **not** included in the flat monthly fee:
 
 | Service | Approximate Cost |
 |---|---|
