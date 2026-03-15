@@ -1,0 +1,58 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  article: CollectionEntry<'articles'>;
+}
+
+const { article } = Astro.props;
+const { title, description, category, publishDate, updatedDate } = article.data;
+const date = updatedDate ?? publishDate;
+
+const categoryLabels: Record<string, string> = {
+  'gohighlevel-basics': 'Basics',
+  'gohighlevel-features': 'Features',
+  'gohighlevel-automation': 'Automation',
+  'gohighlevel-saas': 'SaaS Mode',
+  'gohighlevel-comparisons': 'Comparisons',
+  'gohighlevel-tutorials': 'Tutorials',
+};
+
+const categoryColors: Record<string, string> = {
+  'gohighlevel-basics': 'bg-blue-50 text-blue-700',
+  'gohighlevel-features': 'bg-purple-50 text-purple-700',
+  'gohighlevel-automation': 'bg-green-50 text-green-700',
+  'gohighlevel-saas': 'bg-orange-50 text-orange-700',
+  'gohighlevel-comparisons': 'bg-red-50 text-red-700',
+  'gohighlevel-tutorials': 'bg-teal-50 text-teal-700',
+};
+---
+
+<a
+  href={`/${article.id}/`}
+  class="group flex flex-col bg-white border border-gray-200 rounded-xl overflow-hidden hover:border-brand-300 hover:shadow-lg transition-all duration-200"
+>
+  <div class="p-6 flex flex-col flex-1">
+    <div class="flex items-center justify-between mb-3">
+      <span class={`text-xs font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full ${categoryColors[category] ?? 'bg-gray-100 text-gray-600'}`}>
+        {categoryLabels[category] ?? category}
+      </span>
+      <time
+        datetime={date.toISOString()}
+        class="text-xs text-gray-400"
+      >
+        {date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+      </time>
+    </div>
+    <h2 class="text-lg font-bold text-gray-900 group-hover:text-brand-600 transition-colors leading-snug mb-2 flex-1">
+      {title}
+    </h2>
+    <p class="text-sm text-gray-600 line-clamp-3 mb-4">{description}</p>
+    <span class="inline-flex items-center gap-1 text-sm text-brand-600 font-medium mt-auto">
+      Read article
+      <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+      </svg>
+    </span>
+  </div>
+</a>

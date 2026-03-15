@@ -1,0 +1,25 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Page Not Found | ThisGHLGuy"
+  description="The page you're looking for doesn't exist. Browse our GoHighLevel guides instead."
+  noindex={true}
+>
+  <div class="max-w-2xl mx-auto px-4 py-24 text-center">
+    <p class="text-8xl font-extrabold text-brand-100 mb-2">404</p>
+    <h1 class="text-3xl font-bold text-gray-900 mb-4">Page not found</h1>
+    <p class="text-gray-600 mb-8">
+      The page you're looking for doesn't exist or has been moved. Let's get you back on track.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="/" class="px-6 py-3 bg-brand-600 text-white font-semibold rounded-xl hover:bg-brand-700 transition-colors">
+        Go to Homepage
+      </a>
+      <a href="/gohighlevel-basics/" class="px-6 py-3 bg-gray-100 text-gray-700 font-semibold rounded-xl hover:bg-gray-200 transition-colors">
+        Browse Articles
+      </a>
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,33 @@
+---
+interface Props {
+  author: string;
+}
+
+const { author } = Astro.props;
+
+const authorBios: Record<string, { bio: string; role: string }> = {
+  'Editorial Team': {
+    role: 'GoHighLevel Specialists',
+    bio: 'Our editorial team consists of experienced digital marketers, agency owners, and CRM specialists who use GoHighLevel daily. Every article is researched, tested, and written to give you accurate, actionable information.',
+  },
+  'default': {
+    role: 'GoHighLevel Expert',
+    bio: 'An experienced GoHighLevel user and digital marketing specialist with deep expertise in CRM systems, marketing automation, and agency growth strategies.',
+  },
+};
+
+const info = authorBios[author] ?? authorBios['default'];
+---
+
+<div class="mt-12 p-6 bg-gray-50 rounded-xl border border-gray-200 flex gap-5">
+  <div class="flex-shrink-0">
+    <div class="w-14 h-14 rounded-full bg-brand-600 flex items-center justify-center text-white text-xl font-bold">
+      {author.charAt(0)}
+    </div>
+  </div>
+  <div>
+    <p class="font-bold text-gray-900 text-base">{author}</p>
+    <p class="text-sm text-brand-600 font-medium mb-2">{info.role}</p>
+    <p class="text-sm text-gray-600 leading-relaxed">{info.bio}</p>
+  </div>
+</div>

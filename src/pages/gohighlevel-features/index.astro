@@ -1,0 +1,38 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ArticleCard from '@/components/ArticleCard.astro';
+import Breadcrumb from '@/components/Breadcrumb.astro';
+import { getCollection } from 'astro:content';
+
+const articles = await getCollection('articles', ({ data }) => data.category === 'gohighlevel-features');
+const sorted = articles.sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
+---
+
+<BaseLayout
+  title="GoHighLevel Features – CRM, Funnels, Email, SMS & More | ThisGHLGuy"
+  description="Deep dives into every GoHighLevel feature — CRM, funnel builder, email marketing, SMS, pipelines, reputation management, and analytics."
+  keywords={['GoHighLevel CRM', 'GoHighLevel funnel builder', 'GoHighLevel features', 'GoHighLevel email marketing', 'GoHighLevel SMS']}
+  canonical="/gohighlevel-features/"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <Breadcrumb items={[{ name: 'Home', url: '/' }, { name: 'Features', url: '/gohighlevel-features/' }]} />
+
+    <header class="mt-8 mb-12 max-w-3xl">
+      <span class="text-xs font-bold uppercase tracking-widest text-purple-600 bg-purple-50 px-3 py-1 rounded-full">Features</span>
+      <h1 class="text-4xl font-extrabold text-gray-900 mt-4 mb-4">GoHighLevel Features</h1>
+      <p class="text-xl text-gray-600">
+        GoHighLevel packs over 20 tools into one platform. Explore in-depth breakdowns of every major feature so you can use GHL to its full potential.
+      </p>
+    </header>
+
+    {sorted.length > 0 ? (
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {sorted.map((article) => <ArticleCard article={article} />)}
+      </div>
+    ) : (
+      <div class="text-center py-20 text-gray-500">
+        <p class="text-lg">Articles coming soon. Check back shortly!</p>
+      </div>
+    )}
+  </div>
+</BaseLayout>

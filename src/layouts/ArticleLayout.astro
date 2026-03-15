@@ -1,0 +1,184 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumb from '@/components/Breadcrumb.astro';
+import TableOfContents from '@/components/TableOfContents.astro';
+import FAQSection from '@/components/FAQSection.astro';
+import RelatedArticles from '@/components/RelatedArticles.astro';
+import AuthorBox from '@/components/AuthorBox.astro';
+import SocialShare from '@/components/SocialShare.astro';
+import { getCollection } from 'astro:content';
+
+interface Props {
+  title: string;
+  description: string;
+  keywords: string[];
+  category: string;
+  publishDate: Date;
+  updatedDate?: Date;
+  author: string;
+  faqs?: { question: string; answer: string }[];
+  relatedArticles?: string[];
+  headings: { depth: number; slug: string; text: string }[];
+  slug: string;
+}
+
+const {
+  title,
+  description,
+  keywords,
+  category,
+  publishDate,
+  updatedDate,
+  author,
+  faqs = [],
+  relatedArticles = [],
+  headings,
+  slug,
+} = Astro.props;
+
+const categoryLabels: Record<string, string> = {
+  'gohighlevel-basics': 'GoHighLevel Basics',
+  'gohighlevel-features': 'Features',
+  'gohighlevel-automation': 'Automation',
+  'gohighlevel-saas': 'SaaS Mode',
+  'gohighlevel-comparisons': 'Comparisons',
+  'gohighlevel-tutorials': 'Tutorials',
+};
+const categoryLabel = categoryLabels[category] ?? category;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: categoryLabel, url: `/${category}/` },
+  { name: title, url: `/${slug}/` },
+];
+
+const breadcrumbSchema = breadcrumbItems.map((item, i) => ({
+  '@type': 'ListItem',
+  position: i + 1,
+  name: item.name,
+  item: `https://thisghlguy.com${item.url}`,
+}));
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  author: { '@type': 'Person', name: author },
+  datePublished: publishDate.toISOString(),
+  dateModified: (updatedDate ?? publishDate).toISOString(),
+  publisher: {
+    '@type': 'Organization',
+    name: 'ThisGHLGuy',
+    url: 'https://thisghlguy.com',
+  },
+};
+
+// Fetch related articles data
+const allArticles = await getCollection('articles');
+const relatedData = allArticles.filter((a) => relatedArticles.includes(a.id));
+
+const shareUrl = `https://thisghlguy.com/${slug}/`;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonical={`/${slug}/`}
+  publishDate={publishDate}
+  updatedDate={updatedDate}
+  author={author}
+  articleSchema={articleSchema}
+  faqSchema={faqs}
+  breadcrumbSchema={breadcrumbSchema}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <Breadcrumb items={breadcrumbItems} />
+
+    <div class="mt-6 lg:grid lg:grid-cols-[1fr_280px] lg:gap-10 xl:grid-cols-[1fr_300px]">
+      <!-- Article Content -->
+      <article class="min-w-0">
+        <!-- Article Header -->
+        <header class="mb-8">
+          <a
+            href={`/${category}/`}
+            class="inline-block text-xs font-semibold uppercase tracking-wider text-brand-600 bg-brand-50 px-3 py-1 rounded-full mb-4 hover:bg-brand-100 transition-colors"
+          >
+            {categoryLabel}
+          </a>
+          <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight mb-4">
+            {title}
+          </h1>
+          <p class="text-lg text-gray-600 mb-5">{description}</p>
+          <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500 border-y border-gray-100 py-4">
+            <span>By <strong class="text-gray-700">{author}</strong></span>
+            <span>
+              Published{' '}
+              <time datetime={publishDate.toISOString()}>
+                {publishDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+              </time>
+            </span>
+            {updatedDate && (
+              <span>
+                Updated{' '}
+                <time datetime={updatedDate.toISOString()}>
+                  {updatedDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                </time>
+              </span>
+            )}
+          </div>
+        </header>
+
+        <!-- Mobile TOC -->
+        {headings.length > 0 && (
+          <div class="lg:hidden mb-8">
+            <TableOfContents headings={headings} />
+          </div>
+        )}
+
+        <!-- Article Body -->
+        <div
+          class="prose prose-lg max-w-none
+            prose-headings:font-bold prose-headings:text-gray-900
+            prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4
+            prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
+            prose-p:text-gray-700 prose-p:leading-relaxed
+            prose-a:text-brand-600 prose-a:no-underline hover:prose-a:underline
+            prose-strong:text-gray-900
+            prose-ul:my-4 prose-li:my-1
+            prose-blockquote:border-brand-500 prose-blockquote:bg-brand-50 prose-blockquote:py-1 prose-blockquote:rounded-r-md
+            prose-code:bg-gray-100 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm prose-code:text-brand-700
+            prose-pre:bg-gray-900 prose-pre:text-gray-100"
+        >
+          <slot />
+        </div>
+
+        <!-- FAQ Section -->
+        {faqs.length > 0 && <FAQSection faqs={faqs} />}
+
+        <!-- Social Share -->
+        <SocialShare url={shareUrl} title={title} />
+
+        <!-- Author Box -->
+        <AuthorBox author={author} />
+      </article>
+
+      <!-- Sidebar TOC (desktop) -->
+      {headings.length > 0 && (
+        <aside class="hidden lg:block">
+          <div class="sticky top-24">
+            <TableOfContents headings={headings} />
+          </div>
+        </aside>
+      )}
+    </div>
+
+    <!-- Related Articles -->
+    {relatedData.length > 0 && (
+      <div class="mt-16">
+        <RelatedArticles articles={relatedData} />
+      </div>
+    )}
+  </div>
+</BaseLayout>

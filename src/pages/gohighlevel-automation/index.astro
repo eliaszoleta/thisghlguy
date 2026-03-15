@@ -1,0 +1,38 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ArticleCard from '@/components/ArticleCard.astro';
+import Breadcrumb from '@/components/Breadcrumb.astro';
+import { getCollection } from 'astro:content';
+
+const articles = await getCollection('articles', ({ data }) => data.category === 'gohighlevel-automation');
+const sorted = articles.sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
+---
+
+<BaseLayout
+  title="GoHighLevel Automation – Workflows, Triggers & Campaigns | ThisGHLGuy"
+  description="Learn how to build powerful GoHighLevel automation workflows. Triggers, actions, campaigns, and real-world automation examples for agencies."
+  keywords={['GoHighLevel automation', 'GoHighLevel workflows', 'GHL automation examples', 'GoHighLevel campaigns']}
+  canonical="/gohighlevel-automation/"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <Breadcrumb items={[{ name: 'Home', url: '/' }, { name: 'Automation', url: '/gohighlevel-automation/' }]} />
+
+    <header class="mt-8 mb-12 max-w-3xl">
+      <span class="text-xs font-bold uppercase tracking-widest text-green-600 bg-green-50 px-3 py-1 rounded-full">Automation</span>
+      <h1 class="text-4xl font-extrabold text-gray-900 mt-4 mb-4">GoHighLevel Automation</h1>
+      <p class="text-xl text-gray-600">
+        Automation is where GoHighLevel truly shines. Learn how to build workflows that follow up with leads, nurture clients, and run your business 24/7 — without lifting a finger.
+      </p>
+    </header>
+
+    {sorted.length > 0 ? (
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {sorted.map((article) => <ArticleCard article={article} />)}
+      </div>
+    ) : (
+      <div class="text-center py-20 text-gray-500">
+        <p class="text-lg">Articles coming soon. Check back shortly!</p>
+      </div>
+    )}
+  </div>
+</BaseLayout>

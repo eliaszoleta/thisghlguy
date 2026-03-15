@@ -1,0 +1,135 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ArticleCard from '@/components/ArticleCard.astro';
+import { getCollection } from 'astro:content';
+
+const allArticles = await getCollection('articles');
+
+// Serialize article data for client-side search
+const searchIndex = allArticles.map((a) => ({
+  slug: a.slug,
+  title: a.data.title,
+  description: a.data.description,
+  category: a.data.category,
+  keywords: a.data.keywords.join(' '),
+  publishDate: a.data.publishDate.toISOString(),
+  updatedDate: a.data.updatedDate?.toISOString(),
+  author: a.data.author,
+  featured: a.data.featured,
+}));
+---
+
+<BaseLayout
+  title="Search – GoHighLevel Guides | ThisGHLGuy"
+  description="Search all GoHighLevel articles, tutorials, reviews, and comparisons on ThisGHLGuy."
+  noindex={true}
+>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <h1 class="text-3xl font-bold text-gray-900 mb-2">Search Articles</h1>
+    <p class="text-gray-600 mb-8">Find GoHighLevel guides, tutorials, and comparisons.</p>
+
+    <div class="relative mb-10">
+      <input
+        id="search-input"
+        type="search"
+        placeholder="Search GoHighLevel articles..."
+        class="w-full px-5 py-4 pl-12 border-2 border-gray-200 rounded-xl text-base focus:outline-none focus:border-brand-500 transition-colors"
+        autofocus
+      />
+      <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+      </svg>
+    </div>
+
+    <div id="results-count" class="text-sm text-gray-500 mb-6 hidden"></div>
+    <div id="results-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    <div id="no-results" class="hidden text-center py-16 text-gray-500">
+      <p class="text-lg font-medium mb-2">No articles found</p>
+      <p class="text-sm">Try a different search term or <a href="/" class="text-brand-600 hover:underline">browse all topics</a>.</p>
+    </div>
+  </div>
+</BaseLayout>
+
+<script define:vars={{ searchIndex }}>
+  const input = document.getElementById('search-input');
+  const grid = document.getElementById('results-grid');
+  const noResults = document.getElementById('no-results');
+  const count = document.getElementById('results-count');
+
+  const categoryLabels = {
+    'gohighlevel-basics': 'Basics',
+    'gohighlevel-features': 'Features',
+    'gohighlevel-automation': 'Automation',
+    'gohighlevel-saas': 'SaaS Mode',
+    'gohighlevel-comparisons': 'Comparisons',
+    'gohighlevel-tutorials': 'Tutorials',
+  };
+
+  const categoryColors = {
+    'gohighlevel-basics': 'bg-blue-50 text-blue-700',
+    'gohighlevel-features': 'bg-purple-50 text-purple-700',
+    'gohighlevel-automation': 'bg-green-50 text-green-700',
+    'gohighlevel-saas': 'bg-orange-50 text-orange-700',
+    'gohighlevel-comparisons': 'bg-red-50 text-red-700',
+    'gohighlevel-tutorials': 'bg-teal-50 text-teal-700',
+  };
+
+  function renderCard(article) {
+    const date = article.updatedDate ?? article.publishDate;
+    const dateStr = new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+    const catLabel = categoryLabels[article.category] ?? article.category;
+    const catColor = categoryColors[article.category] ?? 'bg-gray-100 text-gray-600';
+    return `
+      <a href="/${article.slug}/" class="group flex flex-col bg-white border border-gray-200 rounded-xl overflow-hidden hover:border-blue-300 hover:shadow-lg transition-all duration-200">
+        <div class="p-6 flex flex-col flex-1">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full ${catColor}">${catLabel}</span>
+            <time class="text-xs text-gray-400">${dateStr}</time>
+          </div>
+          <h2 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors leading-snug mb-2 flex-1">${article.title}</h2>
+          <p class="text-sm text-gray-600 mb-4" style="display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden">${article.description}</p>
+          <span class="inline-flex items-center gap-1 text-sm text-blue-600 font-medium mt-auto">Read article →</span>
+        </div>
+      </a>
+    `;
+  }
+
+  function search(query) {
+    const q = query.trim().toLowerCase();
+    if (!q) {
+      grid.innerHTML = '';
+      noResults.classList.add('hidden');
+      count.classList.add('hidden');
+      return;
+    }
+    const results = searchIndex.filter((a) => {
+      const text = `${a.title} ${a.description} ${a.keywords}`.toLowerCase();
+      return q.split(' ').every((word) => text.includes(word));
+    });
+    count.textContent = `${results.length} result${results.length !== 1 ? 's' : ''} for "${query}"`;
+    count.classList.remove('hidden');
+    if (results.length === 0) {
+      grid.innerHTML = '';
+      noResults.classList.remove('hidden');
+    } else {
+      noResults.classList.add('hidden');
+      grid.innerHTML = results.map(renderCard).join('');
+    }
+  }
+
+  // Initialize from URL query param
+  const params = new URLSearchParams(window.location.search);
+  const initial = params.get('q') ?? '';
+  if (initial) {
+    input.value = initial;
+    search(initial);
+  }
+
+  input.addEventListener('input', (e) => {
+    const q = e.target.value;
+    const url = new URL(window.location);
+    if (q) url.searchParams.set('q', q); else url.searchParams.delete('q');
+    window.history.replaceState({}, '', url);
+    search(q);
+  });
+</script>

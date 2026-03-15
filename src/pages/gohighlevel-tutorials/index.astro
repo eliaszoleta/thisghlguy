@@ -1,0 +1,38 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ArticleCard from '@/components/ArticleCard.astro';
+import Breadcrumb from '@/components/Breadcrumb.astro';
+import { getCollection } from 'astro:content';
+
+const articles = await getCollection('articles', ({ data }) => data.category === 'gohighlevel-tutorials');
+const sorted = articles.sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
+---
+
+<BaseLayout
+  title="GoHighLevel Tutorials – Step-by-Step How-To Guides | ThisGHLGuy"
+  description="Step-by-step GoHighLevel tutorials. Learn how to set up GHL, build funnels, create automations, connect Stripe, import contacts, and more."
+  keywords={['GoHighLevel tutorial', 'how to use GoHighLevel', 'GoHighLevel setup guide', 'GoHighLevel how to', 'GHL tutorial']}
+  canonical="/gohighlevel-tutorials/"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <Breadcrumb items={[{ name: 'Home', url: '/' }, { name: 'Tutorials', url: '/gohighlevel-tutorials/' }]} />
+
+    <header class="mt-8 mb-12 max-w-3xl">
+      <span class="text-xs font-bold uppercase tracking-widest text-teal-600 bg-teal-50 px-3 py-1 rounded-full">Tutorials</span>
+      <h1 class="text-4xl font-extrabold text-gray-900 mt-4 mb-4">GoHighLevel Tutorials</h1>
+      <p class="text-xl text-gray-600">
+        Step-by-step guides that take you from zero to confident GHL user. Follow along and get GoHighLevel working for your business today.
+      </p>
+    </header>
+
+    {sorted.length > 0 ? (
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {sorted.map((article) => <ArticleCard article={article} />)}
+      </div>
+    ) : (
+      <div class="text-center py-20 text-gray-500">
+        <p class="text-lg">Articles coming soon. Check back shortly!</p>
+      </div>
+    )}
+  </div>
+</BaseLayout>

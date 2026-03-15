@@ -1,0 +1,42 @@
+---
+interface FAQ {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  faqs: FAQ[];
+}
+
+const { faqs } = Astro.props;
+---
+
+<section class="mt-12 border-t border-gray-200 pt-10" aria-labelledby="faq-heading">
+  <h2 id="faq-heading" class="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+    <span class="text-brand-600">🙋</span>
+    Frequently Asked Questions
+  </h2>
+  <div class="space-y-4">
+    {faqs.map((faq, i) => (
+      <details
+        class="group border border-gray-200 rounded-xl overflow-hidden"
+        name="faq"
+      >
+        <summary class="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer list-none select-none bg-white hover:bg-gray-50 transition-colors">
+          <span class="font-semibold text-gray-900 text-base">{faq.question}</span>
+          <svg
+            class="w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-200 group-open:rotate-180"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </summary>
+        <div class="px-5 py-4 bg-gray-50 border-t border-gray-200 text-gray-700 text-sm leading-relaxed">
+          {faq.answer}
+        </div>
+      </details>
+    ))}
+  </div>
+</section>

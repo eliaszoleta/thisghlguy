@@ -1,0 +1,49 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ArticleCard from '@/components/ArticleCard.astro';
+import Breadcrumb from '@/components/Breadcrumb.astro';
+import { getCollection } from 'astro:content';
+
+const articles = await getCollection('articles', ({ data }) => data.category === 'gohighlevel-saas');
+const sorted = articles.sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
+---
+
+<BaseLayout
+  title="GoHighLevel SaaS Mode – White Label, Resell & Build Your SaaS | ThisGHLGuy"
+  description="Complete guides to GoHighLevel SaaS mode. Learn how to white-label GHL, set pricing, build your SaaS product, and create recurring revenue."
+  keywords={['GoHighLevel SaaS mode', 'GoHighLevel white label', 'resell GoHighLevel', 'GHL SaaS', 'GoHighLevel agency SaaS']}
+  canonical="/gohighlevel-saas/"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <Breadcrumb items={[{ name: 'Home', url: '/' }, { name: 'SaaS Mode', url: '/gohighlevel-saas/' }]} />
+
+    <header class="mt-8 mb-12 max-w-3xl">
+      <span class="text-xs font-bold uppercase tracking-widest text-orange-600 bg-orange-50 px-3 py-1 rounded-full">SaaS Mode</span>
+      <h1 class="text-4xl font-extrabold text-gray-900 mt-4 mb-4">GoHighLevel SaaS Mode</h1>
+      <p class="text-xl text-gray-600">
+        SaaS Mode is one of GoHighLevel's most powerful (and most misunderstood) features. Here's everything you need to know about white-labeling GHL and building a recurring-revenue SaaS business.
+      </p>
+    </header>
+
+    <!-- SaaS Mode CTA box -->
+    <div class="mb-10 p-6 bg-orange-50 border border-orange-200 rounded-xl flex gap-4 items-start">
+      <span class="text-3xl">💰</span>
+      <div>
+        <h2 class="font-bold text-orange-900 mb-1">SaaS Mode requires the Agency Unlimited Plan ($297/mo)</h2>
+        <p class="text-sm text-orange-800">
+          With SaaS Mode you can resell GoHighLevel under your own brand and charge clients $97–$497/month — keeping 100% of the revenue.
+        </p>
+      </div>
+    </div>
+
+    {sorted.length > 0 ? (
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {sorted.map((article) => <ArticleCard article={article} />)}
+      </div>
+    ) : (
+      <div class="text-center py-20 text-gray-500">
+        <p class="text-lg">Articles coming soon. Check back shortly!</p>
+      </div>
+    )}
+  </div>
+</BaseLayout>

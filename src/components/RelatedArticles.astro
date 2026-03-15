@@ -1,0 +1,44 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  articles: CollectionEntry<'articles'>[];
+}
+
+const { articles } = Astro.props;
+
+const categoryLabels: Record<string, string> = {
+  'gohighlevel-basics': 'Basics',
+  'gohighlevel-features': 'Features',
+  'gohighlevel-automation': 'Automation',
+  'gohighlevel-saas': 'SaaS Mode',
+  'gohighlevel-comparisons': 'Comparisons',
+  'gohighlevel-tutorials': 'Tutorials',
+};
+---
+
+<section aria-labelledby="related-heading">
+  <h2 id="related-heading" class="text-2xl font-bold text-gray-900 mb-6">Related Articles</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    {articles.map((article) => (
+      <a
+        href={`/${article.id}/`}
+        class="group block bg-white border border-gray-200 rounded-xl p-5 hover:border-brand-300 hover:shadow-md transition-all"
+      >
+        <span class="text-xs font-semibold uppercase tracking-wider text-brand-600 mb-2 block">
+          {categoryLabels[article.data.category] ?? article.data.category}
+        </span>
+        <h3 class="text-base font-semibold text-gray-900 group-hover:text-brand-600 transition-colors leading-snug mb-2">
+          {article.data.title}
+        </h3>
+        <p class="text-sm text-gray-600 line-clamp-2">{article.data.description}</p>
+        <span class="mt-3 inline-flex items-center gap-1 text-sm text-brand-600 font-medium">
+          Read more
+          <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </span>
+      </a>
+    ))}
+  </div>
+</section>

@@ -1,0 +1,56 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ArticleCard from '@/components/ArticleCard.astro';
+import Breadcrumb from '@/components/Breadcrumb.astro';
+import { getCollection } from 'astro:content';
+
+const articles = await getCollection('articles', ({ data }) => data.category === 'gohighlevel-basics');
+const sorted = articles.sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
+---
+
+<BaseLayout
+  title="GoHighLevel Basics – What is GHL, Pricing & Reviews | ThisGHLGuy"
+  description="Everything you need to know about GoHighLevel — what it is, how much it costs, who it's for, and whether it's worth it. Start here."
+  keywords={['what is GoHighLevel', 'GoHighLevel basics', 'GoHighLevel review', 'GoHighLevel pricing', 'is GoHighLevel worth it']}
+  canonical="/gohighlevel-basics/"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <Breadcrumb items={[{ name: 'Home', url: '/' }, { name: 'GoHighLevel Basics', url: '/gohighlevel-basics/' }]} />
+
+    <header class="mt-8 mb-12 max-w-3xl">
+      <span class="text-xs font-bold uppercase tracking-widest text-brand-600 bg-brand-50 px-3 py-1 rounded-full">Basics</span>
+      <h1 class="text-4xl font-extrabold text-gray-900 mt-4 mb-4">GoHighLevel Basics</h1>
+      <p class="text-xl text-gray-600">
+        New to GoHighLevel? This is your starting point. Learn what GHL is, how much it costs, who it's built for, and why thousands of agencies love it.
+      </p>
+    </header>
+
+    <!-- Quick nav links -->
+    <div class="mb-10 p-5 bg-brand-50 border border-brand-200 rounded-xl">
+      <p class="text-sm font-semibold text-brand-800 mb-3">Quick Start Guides:</p>
+      <div class="flex flex-wrap gap-2">
+        {[
+          { label: 'What is GoHighLevel?', href: '/what-is-gohighlevel/' },
+          { label: 'GHL Pricing', href: '/gohighlevel-pricing/' },
+          { label: 'Is GHL Worth It?', href: '/is-gohighlevel-worth-it/' },
+          { label: 'GHL Review', href: '/gohighlevel-review/' },
+          { label: 'Who Should Use GHL?', href: '/who-should-use-gohighlevel/' },
+        ].map((link) => (
+          <a href={link.href} class="px-3 py-1.5 bg-white border border-brand-200 text-brand-700 text-sm font-medium rounded-lg hover:bg-brand-100 transition-colors">
+            {link.label}
+          </a>
+        ))}
+      </div>
+    </div>
+
+    {sorted.length > 0 ? (
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {sorted.map((article) => <ArticleCard article={article} />)}
+      </div>
+    ) : (
+      <div class="text-center py-20 text-gray-500">
+        <p class="text-lg">Articles coming soon. Check back shortly!</p>
+      </div>
+    )}
+  </div>
+</BaseLayout>
