@@ -1,5 +1,5 @@
 ---
-title: "How to Set Up GoHighLevel: Step-by-Step Beginner's Guide (2025)"
+title: "How to Set Up GoHighLevel: Step-by-Step Beginner's Guide (2026)"
 description: "A complete step-by-step guide to setting up GoHighLevel from scratch. Learn how to configure your account, add clients, build funnels, set up automations, and go live."
 category: "gohighlevel-tutorials"
 keywords:
@@ -9,7 +9,7 @@ keywords:
   - "GoHighLevel tutorial beginners"
   - "GoHighLevel account setup"
 publishDate: 2025-02-15
-updatedDate: 2025-03-01
+updatedDate: 2026-03-15
 author: "Editorial Team"
 featured: false
 relatedArticles:

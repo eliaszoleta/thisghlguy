@@ -1,5 +1,5 @@
 ---
-title: "What is GoHighLevel? The Complete Guide (2025)"
+title: "What is GoHighLevel? The Complete Guide (2026)"
 description: "GoHighLevel is an all-in-one CRM and marketing platform built for agencies. Learn what GHL does, how it works, its key features, and whether it's right for your business."
 category: "gohighlevel-basics"
 keywords:
@@ -9,7 +9,7 @@ keywords:
   - "GoHighLevel overview"
   - "GHL platform explained"
 publishDate: 2025-01-15
-updatedDate: 2025-03-01
+updatedDate: 2026-03-15
 author: "Editorial Team"
 featured: true
 relatedArticles:

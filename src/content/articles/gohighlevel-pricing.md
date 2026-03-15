@@ -1,5 +1,5 @@
 ---
-title: "GoHighLevel Pricing (2025): Plans, Costs & What You Actually Get"
+title: "GoHighLevel Pricing (2026): Plans, Costs & What You Actually Get"
 description: "GoHighLevel costs $97–$497/month depending on the plan. This complete pricing breakdown covers every plan, what's included, hidden costs, and which plan is right for you."
 category: "gohighlevel-basics"
 keywords:
@@ -9,7 +9,7 @@ keywords:
   - "GHL cost"
   - "GoHighLevel subscription price"
 publishDate: 2025-01-20
-updatedDate: 2025-03-01
+updatedDate: 2026-03-15
 author: "Editorial Team"
 featured: true
 relatedArticles:

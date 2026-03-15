@@ -1,5 +1,5 @@
 ---
-title: "Is GoHighLevel Worth It? An Honest 2025 Review"
+title: "Is GoHighLevel Worth It? An Honest 2026 Review"
 description: "Is GoHighLevel actually worth the money? We cut through the hype to give you an honest answer — who it works for, where it falls short, and whether you should sign up."
 category: "gohighlevel-basics"
 keywords:
@@ -9,7 +9,7 @@ keywords:
   - "should I use GoHighLevel"
   - "GoHighLevel honest review"
 publishDate: 2025-02-01
-updatedDate: 2025-03-01
+updatedDate: 2026-03-15
 author: "Editorial Team"
 featured: false
 relatedArticles:

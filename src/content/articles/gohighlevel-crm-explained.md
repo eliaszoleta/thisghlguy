@@ -1,5 +1,5 @@
 ---
-title: "GoHighLevel CRM Explained: Features, Pipelines & How It Works (2025)"
+title: "GoHighLevel CRM Explained: Features, Pipelines & How It Works (2026)"
 description: "A complete breakdown of the GoHighLevel CRM — contacts, pipelines, smart lists, conversations, and how it compares to HubSpot, Salesforce, and other CRMs."
 category: "gohighlevel-features"
 keywords:
@@ -9,7 +9,7 @@ keywords:
   - "GoHighLevel pipeline management"
   - "GoHighLevel contact management"
 publishDate: 2025-02-05
-updatedDate: 2025-03-01
+updatedDate: 2026-03-15
 author: "Editorial Team"
 featured: false
 relatedArticles:

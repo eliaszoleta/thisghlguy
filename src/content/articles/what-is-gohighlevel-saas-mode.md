@@ -1,5 +1,5 @@
 ---
-title: "What is GoHighLevel SaaS Mode? Complete Guide for Agencies (2025)"
+title: "What is GoHighLevel SaaS Mode? Complete Guide for Agencies (2026)"
 description: "GoHighLevel SaaS Mode lets you white-label GHL and resell it as your own software. Learn how it works, how to set it up, and how to make money with it."
 category: "gohighlevel-saas"
 keywords:
@@ -9,7 +9,7 @@ keywords:
   - "resell GoHighLevel"
   - "GoHighLevel SaaS explained"
 publishDate: 2025-01-25
-updatedDate: 2025-03-01
+updatedDate: 2026-03-15
 author: "Editorial Team"
 featured: true
 relatedArticles:
