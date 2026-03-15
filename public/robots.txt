@@ -5,4 +5,4 @@ Disallow: /search/
 Disallow: /privacy-policy/
 Disallow: /terms/
 
-Sitemap: https://thisghlguy.com/sitemap.xml
+Sitemap: https://thisghlguy.com/sitemap-index.xml
