@@ -13,7 +13,11 @@ const { faqs } = Astro.props;
 
 <section class="mt-12 border-t border-gray-200 pt-10" aria-labelledby="faq-heading">
   <h2 id="faq-heading" class="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-    <span class="text-brand-600">🙋</span>
+    <svg class="w-7 h-7 text-brand-600 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="10" />
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+      <circle cx="12" cy="17" r=".5" fill="currentColor" stroke="none" />
+    </svg>
     Frequently Asked Questions
   </h2>
   <div class="space-y-4">
