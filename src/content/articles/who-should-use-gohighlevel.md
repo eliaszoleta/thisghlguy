@@ -8,7 +8,7 @@ keywords:
   - "GoHighLevel for agencies"
   - "GoHighLevel for small business"
   - "GoHighLevel for freelancers"
-publishDate: 2025-03-01
+publishDate: 2026-01-09
 author: "Editorial Team"
 featured: false
 relatedArticles:

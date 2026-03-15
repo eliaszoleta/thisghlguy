@@ -8,7 +8,7 @@ keywords:
   - "GHL SMS campaign"
   - "GoHighLevel SMS workflow"
   - "GoHighLevel text message automation"
-publishDate: 2025-03-11
+publishDate: 2026-02-24
 author: "Editorial Team"
 featured: false
 relatedArticles:

@@ -8,7 +8,7 @@ keywords:
   - "GHL solar automation"
   - "GoHighLevel solar company workflow"
   - "automate solar lead follow-up"
-publishDate: 2025-03-15
+publishDate: 2026-03-12
 author: "Editorial Team"
 featured: false
 relatedArticles:

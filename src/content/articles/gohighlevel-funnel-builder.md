@@ -8,7 +8,7 @@ keywords:
   - "how to build a funnel in GoHighLevel"
   - "GoHighLevel vs ClickFunnels funnel builder"
   - "GoHighLevel landing page builder"
-publishDate: 2025-03-01
+publishDate: 2026-01-17
 author: "Editorial Team"
 featured: false
 relatedArticles:

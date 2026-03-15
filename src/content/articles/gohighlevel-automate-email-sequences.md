@@ -8,7 +8,7 @@ keywords:
   - "GHL email drip campaign"
   - "GoHighLevel email workflow"
   - "GoHighLevel automated emails"
-publishDate: 2025-03-12
+publishDate: 2026-02-27
 author: "Editorial Team"
 featured: false
 relatedArticles:

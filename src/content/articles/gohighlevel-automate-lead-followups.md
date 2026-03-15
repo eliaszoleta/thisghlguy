@@ -8,7 +8,7 @@ keywords:
   - "GHL follow-up workflow"
   - "automate lead follow-up GoHighLevel"
   - "GoHighLevel lead nurture automation"
-publishDate: 2025-03-09
+publishDate: 2026-02-14
 author: "Editorial Team"
 featured: false
 relatedArticles:

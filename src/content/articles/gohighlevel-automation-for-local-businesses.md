@@ -8,7 +8,7 @@ keywords:
   - "GHL automation small business"
   - "GoHighLevel local service business"
   - "automate local business with GoHighLevel"
-publishDate: 2025-03-14
+publishDate: 2026-03-07
 author: "Editorial Team"
 featured: false
 relatedArticles:

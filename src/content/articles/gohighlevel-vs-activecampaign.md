@@ -8,7 +8,7 @@ keywords:
   - "ActiveCampaign alternative"
   - "GoHighLevel ActiveCampaign comparison"
   - "GoHighLevel or ActiveCampaign"
-publishDate: 2025-03-15
+publishDate: 2026-03-13
 author: "Editorial Team"
 featured: false
 relatedArticles:

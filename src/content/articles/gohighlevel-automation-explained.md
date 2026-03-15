@@ -8,7 +8,7 @@ keywords:
   - "GoHighLevel automation overview"
   - "GHL automation"
   - "GoHighLevel automated marketing"
-publishDate: 2025-03-06
+publishDate: 2026-01-28
 author: "Editorial Team"
 featured: false
 relatedArticles:

@@ -8,7 +8,7 @@ keywords:
   - "GoHighLevel workflow logic"
   - "GHL automation triggers"
   - "GoHighLevel workflow execution"
-publishDate: 2025-03-07
+publishDate: 2026-02-04
 author: "Editorial Team"
 featured: false
 relatedArticles:

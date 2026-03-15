@@ -8,7 +8,7 @@ keywords:
   - "start SaaS GoHighLevel"
   - "GoHighLevel white label SaaS"
   - "GoHighLevel SaaS setup guide"
-publishDate: 2025-03-10
+publishDate: 2026-02-21
 author: "Editorial Team"
 featured: false
 relatedArticles:

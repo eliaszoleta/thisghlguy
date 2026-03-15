@@ -8,7 +8,7 @@ keywords:
   - "GHL real estate automation"
   - "GoHighLevel real estate workflow"
   - "GoHighLevel for real estate agents"
-publishDate: 2025-03-15
+publishDate: 2026-03-11
 author: "Editorial Team"
 featured: false
 relatedArticles:

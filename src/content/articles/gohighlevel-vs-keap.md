@@ -8,7 +8,7 @@ keywords:
   - "Keap vs GoHighLevel"
   - "GoHighLevel vs Keap CRM"
   - "best CRM for small business"
-publishDate: 2025-03-01
+publishDate: 2026-01-24
 author: "Editorial Team"
 featured: false
 relatedArticles:

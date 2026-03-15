@@ -8,7 +8,7 @@ keywords:
   - "GHL automation agency"
   - "GoHighLevel marketing agency workflows"
   - "automate agency with GoHighLevel"
-publishDate: 2025-03-13
+publishDate: 2026-03-05
 author: "Editorial Team"
 featured: false
 relatedArticles:

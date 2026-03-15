@@ -8,7 +8,7 @@ keywords:
   - "GHL appointment reminders"
   - "GoHighLevel reduce no-shows"
   - "automate appointment reminders GoHighLevel"
-publishDate: 2025-03-10
+publishDate: 2026-02-18
 author: "Editorial Team"
 featured: false
 relatedArticles:

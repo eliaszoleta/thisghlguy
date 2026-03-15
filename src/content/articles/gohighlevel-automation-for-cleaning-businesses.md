@@ -8,7 +8,7 @@ keywords:
   - "GHL cleaning company automation"
   - "GoHighLevel maid service workflow"
   - "automate cleaning business with GoHighLevel"
-publishDate: 2025-03-15
+publishDate: 2026-03-09
 author: "Editorial Team"
 featured: false
 relatedArticles:

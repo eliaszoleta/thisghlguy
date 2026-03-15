@@ -8,7 +8,7 @@ keywords:
   - "GHL workflow builder tutorial"
   - "GoHighLevel automation builder"
   - "how to use GoHighLevel workflows"
-publishDate: 2025-03-08
+publishDate: 2026-02-11
 author: "Editorial Team"
 featured: false
 relatedArticles:

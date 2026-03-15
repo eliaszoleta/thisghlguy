@@ -8,7 +8,7 @@ keywords:
   - "GoHighLevel rebrand"
   - "GoHighLevel agency white label"
   - "resell GoHighLevel"
-publishDate: 2025-03-01
+publishDate: 2026-01-13
 author: "Editorial Team"
 featured: false
 relatedArticles:
