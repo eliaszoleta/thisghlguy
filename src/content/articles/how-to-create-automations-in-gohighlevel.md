@@ -270,4 +270,7 @@ The goal is to build automations that handle the repetitive parts of lead nurtur
 
 ---
 
-*Related: [GoHighLevel Automation Workflows Explained](/gohighlevel-automation-workflows) | [How to Set Up GoHighLevel](/how-to-set-up-gohighlevel) | [GoHighLevel CRM Explained](/gohighlevel-crm-explained)*
+**Also read:**
+- [GoHighLevel automation workflows explained →](/gohighlevel-automation-workflows/)
+- [How to set up GoHighLevel →](/how-to-set-up-gohighlevel/)
+- [GoHighLevel CRM explained →](/gohighlevel-crm-explained/)

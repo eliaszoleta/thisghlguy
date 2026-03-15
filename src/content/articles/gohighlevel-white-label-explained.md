@@ -204,4 +204,7 @@ For beginners: start with SaaS Mode and white label together. The learning curve
 
 ---
 
-*Related reading: [What Is GoHighLevel SaaS Mode?](/what-is-gohighlevel-saas-mode) | [How to Start a SaaS with GoHighLevel](/how-to-start-saas-with-gohighlevel) | [GoHighLevel Pricing Explained](/gohighlevel-pricing)*
+**Also read:**
+- [What is GoHighLevel SaaS Mode? →](/what-is-gohighlevel-saas-mode/)
+- [How to start a SaaS with GoHighLevel →](/how-to-start-saas-with-gohighlevel/)
+- [GoHighLevel pricing: Full breakdown →](/gohighlevel-pricing/)

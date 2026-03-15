@@ -159,4 +159,8 @@ The best next step: take the [14-day free trial](https://www.gohighlevel.com) an
 
 ---
 
-*Ready to go deeper? Read our [complete GoHighLevel review](/gohighlevel-review), or compare it to alternatives in our [GoHighLevel vs. ClickFunnels breakdown](/gohighlevel-vs-clickfunnels).*
+**Also read:**
+- [Complete GoHighLevel review →](/gohighlevel-review/)
+- [GoHighLevel pricing: Full breakdown →](/gohighlevel-pricing/)
+- [Is GoHighLevel worth it? →](/is-gohighlevel-worth-it/)
+- [GoHighLevel vs. ClickFunnels →](/gohighlevel-vs-clickfunnels/)
