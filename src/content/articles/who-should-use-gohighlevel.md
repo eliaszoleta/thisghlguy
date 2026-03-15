@@ -9,7 +9,6 @@ keywords:
   - "GoHighLevel for small business"
   - "GoHighLevel for freelancers"
 publishDate: 2025-03-01
-updatedDate: 2026-03-15
 author: "Editorial Team"
 featured: false
 relatedArticles:

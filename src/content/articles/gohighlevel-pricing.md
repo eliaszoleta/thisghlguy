@@ -9,7 +9,6 @@ keywords:
   - "GHL cost"
   - "GoHighLevel subscription price"
 publishDate: 2025-01-20
-updatedDate: 2026-03-15
 author: "Editorial Team"
 featured: true
 relatedArticles:

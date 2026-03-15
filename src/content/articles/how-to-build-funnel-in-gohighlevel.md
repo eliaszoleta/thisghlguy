@@ -9,7 +9,6 @@ keywords:
   - "GoHighLevel funnel tutorial"
   - "GHL funnel setup"
 publishDate: 2025-03-12
-updatedDate: 2026-03-15
 author: "Editorial Team"
 featured: false
 relatedArticles:

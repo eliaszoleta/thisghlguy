@@ -9,7 +9,6 @@ keywords:
   - "GoHighLevel HubSpot comparison"
   - "GoHighLevel or HubSpot"
 publishDate: 2025-03-08
-updatedDate: 2026-03-15
 author: "Editorial Team"
 featured: false
 relatedArticles:

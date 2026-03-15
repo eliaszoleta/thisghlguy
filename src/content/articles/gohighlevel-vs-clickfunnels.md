@@ -9,7 +9,6 @@ keywords:
   - "GoHighLevel or ClickFunnels"
   - "GoHighLevel ClickFunnels comparison"
 publishDate: 2025-02-10
-updatedDate: 2026-03-15
 author: "Editorial Team"
 featured: true
 relatedArticles:

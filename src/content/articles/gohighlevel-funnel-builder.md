@@ -9,7 +9,6 @@ keywords:
   - "GoHighLevel vs ClickFunnels funnel builder"
   - "GoHighLevel landing page builder"
 publishDate: 2025-03-01
-updatedDate: 2026-03-15
 author: "Editorial Team"
 featured: false
 relatedArticles:

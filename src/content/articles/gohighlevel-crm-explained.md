@@ -9,7 +9,6 @@ keywords:
   - "GoHighLevel pipeline management"
   - "GoHighLevel contact management"
 publishDate: 2025-02-05
-updatedDate: 2026-03-15
 author: "Editorial Team"
 featured: false
 relatedArticles:

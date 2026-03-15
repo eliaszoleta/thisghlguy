@@ -9,7 +9,6 @@ keywords:
   - "should I use GoHighLevel"
   - "GoHighLevel honest review"
 publishDate: 2025-02-01
-updatedDate: 2026-03-15
 author: "Editorial Team"
 featured: false
 relatedArticles:

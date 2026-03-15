@@ -9,7 +9,6 @@ keywords:
   - "GoHighLevel overview"
   - "GHL platform explained"
 publishDate: 2025-01-15
-updatedDate: 2026-03-15
 author: "Editorial Team"
 featured: true
 relatedArticles:

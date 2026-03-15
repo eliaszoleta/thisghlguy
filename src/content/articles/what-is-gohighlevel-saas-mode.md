@@ -9,7 +9,6 @@ keywords:
   - "resell GoHighLevel"
   - "GoHighLevel SaaS explained"
 publishDate: 2025-01-25
-updatedDate: 2026-03-15
 author: "Editorial Team"
 featured: true
 relatedArticles:

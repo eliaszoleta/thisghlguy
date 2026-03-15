@@ -9,7 +9,6 @@ keywords:
   - "GoHighLevel pros and cons"
   - "best CRM for agencies"
 publishDate: 2025-03-01
-updatedDate: 2026-03-15
 author: "Editorial Team"
 featured: true
 relatedArticles:
