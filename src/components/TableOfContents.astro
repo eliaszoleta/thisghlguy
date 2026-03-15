@@ -24,10 +24,10 @@ const tocHeadings = headings.filter((h) => h.depth === 2 || h.depth === 3);
     <nav aria-label="Table of contents">
       <ul class="space-y-1.5 text-sm">
         {tocHeadings.map((heading) => (
-          <li class={heading.depth === 3 ? 'pl-4' : ''}>
+          <li class={`toc-item${heading.depth === 3 ? ' pl-4' : ''}`}>
             <a
               href={`#${heading.slug}`}
-              class="toc-link text-gray-600 hover:text-brand-600 hover:underline transition-colors leading-snug block py-0.5"
+              class="toc-link text-gray-600 hover:text-brand-600 transition-colors leading-snug block py-0.5"
             >
               {heading.text}
             </a>
@@ -38,26 +38,61 @@ const tocHeadings = headings.filter((h) => h.depth === 2 || h.depth === 3);
   </div>
 )}
 
+<style>
+  .toc-link.toc-active {
+    color: #2563eb;
+    font-weight: 600;
+  }
+  .toc-item.toc-item-active {
+    border-left: 2px solid #2563eb;
+    padding-left: 0.5rem;
+  }
+  /* keep indent for h3 items when active */
+  .toc-item.pl-4.toc-item-active {
+    padding-left: 1.5rem;
+  }
+</style>
+
 <script>
-  // Highlight active TOC link on scroll
-  const links = document.querySelectorAll<HTMLAnchorElement>('.toc-link');
-  const headingEls = Array.from(links).map((l) => {
-    const id = l.getAttribute('href')?.slice(1);
-    return id ? document.getElementById(id) : null;
-  });
+  function initTOC() {
+    const tocLinks = Array.from(document.querySelectorAll<HTMLAnchorElement>('.toc-link'));
+    if (tocLinks.length === 0) return;
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          links.forEach((l) => l.classList.remove('text-brand-600', 'font-semibold'));
-          const idx = headingEls.indexOf(entry.target as HTMLElement);
-          if (idx !== -1) links[idx].classList.add('text-brand-600', 'font-semibold');
-        }
-      }),
-      { rootMargin: '-20% 0px -70% 0px' }
+    const sectionEls = tocLinks.map((l) => {
+      const id = l.getAttribute('href')?.slice(1);
+      return id ? document.getElementById(id) : null;
+    });
+
+    let currentActive = -1;
+
+    function activate(idx: number) {
+      if (idx === currentActive) return;
+      currentActive = idx;
+      tocLinks.forEach((link, i) => {
+        const isActive = i === idx;
+        link.classList.toggle('toc-active', isActive);
+        link.parentElement?.classList.toggle('toc-item-active', isActive);
+      });
     }
-  );
 
-  headingEls.forEach((el) => el && observer.observe(el));
+    function onScroll() {
+      // The active section is the last heading whose top is above 25% of the viewport
+      const threshold = window.scrollY + window.innerHeight * 0.25;
+      let best = 0;
+      sectionEls.forEach((el, i) => {
+        if (el && el.offsetTop <= threshold) best = i;
+      });
+      activate(best);
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll(); // set initial state on load
+  }
+
+  // Run after DOM is ready (handles both first load and client-side nav)
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTOC);
+  } else {
+    initTOC();
+  }
 </script>
