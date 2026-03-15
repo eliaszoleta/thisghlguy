@@ -157,10 +157,8 @@ If you fit that profile, it's one of the most cost-effective platforms available
 
 The best next step: take the [14-day free trial](https://www.gohighlevel.com) and validate it against your specific workflow before committing.
 
----
-
-**Also read:**
+**Next steps:**
+- [Start your 14-day free trial →](https://www.gohighlevel.com/?fp_ref=thisghlguy)
 - [Complete GoHighLevel review →](/gohighlevel-review/)
 - [GoHighLevel pricing: Full breakdown →](/gohighlevel-pricing/)
 - [Is GoHighLevel worth it? →](/is-gohighlevel-worth-it/)
-- [GoHighLevel vs. ClickFunnels →](/gohighlevel-vs-clickfunnels/)

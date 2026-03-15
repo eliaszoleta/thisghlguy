@@ -268,9 +268,7 @@ GoHighLevel's workflow builder is genuinely powerful once you understand the tri
 
 The goal is to build automations that handle the repetitive parts of lead nurturing and follow-up — so you can focus on the conversations that actually close deals.
 
----
-
-**Also read:**
+**Related Guides:**
 - [GoHighLevel automation workflows explained →](/gohighlevel-automation-workflows/)
 - [How to set up GoHighLevel →](/how-to-set-up-gohighlevel/)
 - [GoHighLevel CRM explained →](/gohighlevel-crm-explained/)

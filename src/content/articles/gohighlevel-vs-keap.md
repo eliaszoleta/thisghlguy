@@ -312,7 +312,7 @@ For **small businesses** with straightforward CRM needs, no need for multi-accou
 
 The pricing difference alone is significant: GoHighLevel's Agency Unlimited plan at $297/month covers unlimited clients, while Keap's $299/month Pro plan covers just 1,500 contacts at a single company. The value math heavily favors GoHighLevel for any business beyond the most basic use case.
 
----
+**[Try GoHighLevel free for 14 days →](https://www.gohighlevel.com/?fp_ref=thisghlguy)**
 
 **Also read:**
 - [GoHighLevel vs HubSpot →](/gohighlevel-vs-hubspot/)

@@ -224,7 +224,7 @@ For agencies managing multiple clients, the ability to build a funnel once, conn
 
 ---
 
-**Also read:**
+**Related Guides:**
 - [How to build a funnel in GoHighLevel (step-by-step) →](/how-to-build-funnel-in-gohighlevel/)
-- [GoHighLevel vs. ClickFunnels →](/gohighlevel-vs-clickfunnels/)
 - [GoHighLevel automation workflows explained →](/gohighlevel-automation-workflows/)
+- [GoHighLevel vs. ClickFunnels →](/gohighlevel-vs-clickfunnels/)

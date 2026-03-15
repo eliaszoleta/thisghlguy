@@ -202,9 +202,7 @@ For SaaS builders: yes, if you're targeting a specific niche and willing to inve
 
 For beginners: start with SaaS Mode and white label together. The learning curve of running a SaaS business matters more than the platform cost.
 
----
-
-**Also read:**
+**Related Guides:**
 - [What is GoHighLevel SaaS Mode? →](/what-is-gohighlevel-saas-mode/)
 - [How to start a SaaS with GoHighLevel →](/how-to-start-saas-with-gohighlevel/)
 - [GoHighLevel pricing: Full breakdown →](/gohighlevel-pricing/)
