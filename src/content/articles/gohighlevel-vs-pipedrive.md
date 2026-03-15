@@ -8,7 +8,7 @@ keywords:
   - "Pipedrive alternative"
   - "GoHighLevel Pipedrive comparison"
   - "GoHighLevel or Pipedrive"
-publishDate: 2025-03-20
+publishDate: 2025-03-15
 author: "Editorial Team"
 featured: false
 relatedArticles:
