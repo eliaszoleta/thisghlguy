@@ -15,23 +15,13 @@ const currentPath = Astro.url.pathname;
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
       <!-- Logo -->
-      <a href="/" class="flex items-center gap-2.5 hover:opacity-90 transition-opacity">
-        <!-- Icon mark -->
-        <svg width="36" height="36" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <defs>
-            <linearGradient id="hdr-bg" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#3b82f6"/>
-              <stop offset="100%" stop-color="#1e40af"/>
-            </linearGradient>
-          </defs>
-          <rect width="100" height="100" rx="22" fill="url(#hdr-bg)"/>
-          <text x="52" y="71" font-family="'Arial Black','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="66" font-weight="900" text-anchor="middle" fill="white">G</text>
-          <rect x="27" y="79" width="46" height="5" rx="2.5" fill="#f59e0b"/>
-        </svg>
-        <!-- Wordmark -->
-        <span class="text-xl font-bold tracking-tight leading-none">
-          <span class="text-gray-800">This</span><span class="text-brand-600">GHL</span><span class="text-gray-800">Guy</span>
-        </span>
+      <a href="/" class="flex items-center hover:opacity-90 transition-opacity">
+        <img
+          src="/logo.png"
+          alt="ThisGHLGuy"
+          height="44"
+          class="h-11 w-auto"
+        />
       </a>
 
       <!-- Desktop Nav -->
