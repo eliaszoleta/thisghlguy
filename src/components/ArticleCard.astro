@@ -6,7 +6,7 @@ interface Props {
 }
 
 const { article } = Astro.props;
-const { title, description, category, publishDate, updatedDate } = article.data;
+const { title, description, category, publishDate, updatedDate, featuredImage } = article.data;
 const date = updatedDate ?? publishDate;
 
 const categoryLabels: Record<string, string> = {
@@ -32,6 +32,14 @@ const categoryColors: Record<string, string> = {
   href={`/${article.id}/`}
   class="group flex flex-col bg-white border border-gray-200 rounded-xl overflow-hidden hover:border-brand-300 hover:shadow-lg transition-all duration-200"
 >
+  {featuredImage && (
+    <img
+      src={featuredImage}
+      alt={title}
+      class="w-full h-44 object-cover"
+      loading="lazy"
+    />
+  )}
   <div class="p-6 flex flex-col flex-1">
     <div class="flex items-center justify-between mb-3">
       <span class={`text-xs font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full ${categoryColors[category] ?? 'bg-gray-100 text-gray-600'}`}>
