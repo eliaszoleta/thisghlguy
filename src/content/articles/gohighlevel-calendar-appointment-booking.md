@@ -8,7 +8,7 @@ keywords:
   - "GHL calendar setup"
   - "GoHighLevel scheduling"
   - "GoHighLevel booking system"
-publishDate: 2025-03-15
+publishDate: 2026-01-14
 author: "Editorial Team"
 featured: false
 relatedArticles:

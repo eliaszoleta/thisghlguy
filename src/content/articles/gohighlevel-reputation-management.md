@@ -8,7 +8,7 @@ keywords:
   - "GHL review management"
   - "GoHighLevel Google reviews"
   - "GoHighLevel review requests"
-publishDate: 2025-03-15
+publishDate: 2026-02-07
 author: "Editorial Team"
 featured: false
 relatedArticles:

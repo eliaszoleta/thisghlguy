@@ -8,7 +8,7 @@ keywords:
   - "GHL email builder"
   - "GoHighLevel email automation"
   - "GoHighLevel email features"
-publishDate: 2025-03-15
+publishDate: 2026-03-03
 author: "Editorial Team"
 featured: false
 relatedArticles:
