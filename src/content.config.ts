@@ -28,6 +28,7 @@ const articles = defineCollection({
       )
       .optional(),
     relatedArticles: z.array(z.string()).optional(),
+    ogImage: z.string().optional(),
   }),
 });
 

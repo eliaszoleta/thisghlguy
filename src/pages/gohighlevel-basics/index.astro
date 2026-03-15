@@ -6,6 +6,19 @@ import { getCollection } from 'astro:content';
 
 const articles = await getCollection('articles', ({ data }) => data.category === 'gohighlevel-basics');
 const sorted = articles.sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
+
+const collectionSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'GoHighLevel Basics',
+  description: 'Everything you need to know about GoHighLevel — what it is, how much it costs, who it\'s for, and whether it\'s worth it.',
+  url: 'https://thisghlguy.com/gohighlevel-basics/',
+  hasPart: sorted.map((a) => ({
+    '@type': 'Article',
+    headline: a.data.title,
+    url: `https://thisghlguy.com/${a.id}/`,
+  })),
+};
 ---
 
 <BaseLayout
@@ -13,6 +26,7 @@ const sorted = articles.sort((a, b) => b.data.publishDate.getTime() - a.data.pub
   description="Everything you need to know about GoHighLevel — what it is, how much it costs, who it's for, and whether it's worth it. Start here."
   keywords={['what is GoHighLevel', 'GoHighLevel basics', 'GoHighLevel review', 'GoHighLevel pricing', 'is GoHighLevel worth it']}
   canonical="/gohighlevel-basics/"
+  extraSchemas={[collectionSchema]}
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
     <Breadcrumb items={[{ name: 'Home', url: '/' }, { name: 'GoHighLevel Basics', url: '/gohighlevel-basics/' }]} />

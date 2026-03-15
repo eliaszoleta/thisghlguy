@@ -6,6 +6,19 @@ import { getCollection } from 'astro:content';
 
 const articles = await getCollection('articles', ({ data }) => data.category === 'gohighlevel-automation');
 const sorted = articles.sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
+
+const collectionSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'GoHighLevel Automation',
+  description: 'Learn how to build powerful GoHighLevel automation workflows. Triggers, actions, campaigns, and real-world automation examples for agencies.',
+  url: 'https://thisghlguy.com/gohighlevel-automation/',
+  hasPart: sorted.map((a) => ({
+    '@type': 'Article',
+    headline: a.data.title,
+    url: `https://thisghlguy.com/${a.id}/`,
+  })),
+};
 ---
 
 <BaseLayout
@@ -13,6 +26,7 @@ const sorted = articles.sort((a, b) => b.data.publishDate.getTime() - a.data.pub
   description="Learn how to build powerful GoHighLevel automation workflows. Triggers, actions, campaigns, and real-world automation examples for agencies."
   keywords={['GoHighLevel automation', 'GoHighLevel workflows', 'GHL automation examples', 'GoHighLevel campaigns']}
   canonical="/gohighlevel-automation/"
+  extraSchemas={[collectionSchema]}
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
     <Breadcrumb items={[{ name: 'Home', url: '/' }, { name: 'Automation', url: '/gohighlevel-automation/' }]} />

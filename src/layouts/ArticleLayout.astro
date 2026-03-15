@@ -20,6 +20,7 @@ interface Props {
   relatedArticles?: string[];
   headings: { depth: number; slug: string; text: string }[];
   slug: string;
+  ogImage?: string;
 }
 
 const {
@@ -34,6 +35,7 @@ const {
   relatedArticles = [],
   headings,
   slug,
+  ogImage,
 } = Astro.props;
 
 const categoryLabels: Record<string, string> = {
@@ -59,18 +61,24 @@ const breadcrumbSchema = breadcrumbItems.map((item, i) => ({
   item: `https://thisghlguy.com${item.url}`,
 }));
 
+const siteUrl = 'https://thisghlguy.com';
+const articleImage = ogImage
+  ? (ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`)
+  : `${siteUrl}/og-default.png`;
+
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline: title,
   description,
+  image: articleImage,
   author: { '@type': 'Person', name: author },
   datePublished: publishDate.toISOString(),
   dateModified: (updatedDate ?? publishDate).toISOString(),
   publisher: {
     '@type': 'Organization',
     name: 'ThisGHLGuy',
-    url: 'https://thisghlguy.com',
+    url: siteUrl,
   },
 };
 
@@ -86,6 +94,7 @@ const shareUrl = `https://thisghlguy.com/${slug}/`;
   description={description}
   keywords={keywords}
   canonical={`/${slug}/`}
+  ogImage={ogImage}
   publishDate={publishDate}
   updatedDate={updatedDate}
   author={author}

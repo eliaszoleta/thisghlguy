@@ -6,6 +6,19 @@ import { getCollection } from 'astro:content';
 
 const articles = await getCollection('articles', ({ data }) => data.category === 'gohighlevel-comparisons');
 const sorted = articles.sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
+
+const collectionSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'GoHighLevel vs Competitors',
+  description: 'How does GoHighLevel stack up against ClickFunnels, HubSpot, ActiveCampaign, Kajabi, and more? Read our detailed, side-by-side comparisons.',
+  url: 'https://thisghlguy.com/gohighlevel-comparisons/',
+  hasPart: sorted.map((a) => ({
+    '@type': 'Article',
+    headline: a.data.title,
+    url: `https://thisghlguy.com/${a.id}/`,
+  })),
+};
 ---
 
 <BaseLayout
@@ -13,6 +26,7 @@ const sorted = articles.sort((a, b) => b.data.publishDate.getTime() - a.data.pub
   description="How does GoHighLevel stack up against ClickFunnels, HubSpot, ActiveCampaign, Kajabi, and more? Read our detailed, side-by-side comparisons."
   keywords={['GoHighLevel vs ClickFunnels', 'GoHighLevel vs HubSpot', 'GoHighLevel vs ActiveCampaign', 'GHL alternatives', 'GoHighLevel comparison']}
   canonical="/gohighlevel-comparisons/"
+  extraSchemas={[collectionSchema]}
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
     <Breadcrumb items={[{ name: 'Home', url: '/' }, { name: 'Comparisons', url: '/gohighlevel-comparisons/' }]} />

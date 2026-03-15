@@ -14,6 +14,7 @@ interface Props {
   articleSchema?: object;
   faqSchema?: object[];
   breadcrumbSchema?: object[];
+  extraSchemas?: object[];
   noindex?: boolean;
 }
 
@@ -29,6 +30,7 @@ const {
   articleSchema,
   faqSchema,
   breadcrumbSchema,
+  extraSchemas = [],
   noindex = false,
 } = Astro.props;
 
@@ -69,6 +71,7 @@ if (faqSchema && faqSchema.length > 0) {
     })),
   });
 }
+for (const s of extraSchemas) schemas.push(s);
 ---
 
 <!doctype html>
