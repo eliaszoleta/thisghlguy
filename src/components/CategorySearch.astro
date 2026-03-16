@@ -1,0 +1,65 @@
+---
+import ArticleCard from '@/components/ArticleCard.astro';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  articles: CollectionEntry<'articles'>[];
+}
+
+const { articles } = Astro.props;
+---
+
+<div>
+  <!-- Search bar -->
+  <div class="relative mb-8">
+    <svg
+      class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none"
+      fill="none" stroke="currentColor" viewBox="0 0 24 24"
+    >
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" />
+    </svg>
+    <input
+      id="cat-search"
+      type="search"
+      placeholder="Search articles…"
+      autocomplete="off"
+      class="w-full pl-12 pr-4 py-3 bg-white border border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition"
+    />
+  </div>
+
+  <!-- Article grid -->
+  <div id="cat-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    {articles.map((article) => (
+      <div
+        data-article
+        data-title={article.data.title.toLowerCase()}
+        data-desc={article.data.description.toLowerCase()}
+      >
+        <ArticleCard article={article} />
+      </div>
+    ))}
+  </div>
+
+  <!-- No results -->
+  <p id="cat-empty" class="hidden text-center py-16 text-gray-500 text-lg">
+    No articles match your search.
+  </p>
+</div>
+
+<script>
+  const input = document.getElementById('cat-search') as HTMLInputElement;
+  const empty = document.getElementById('cat-empty') as HTMLElement;
+  const cards = document.querySelectorAll<HTMLElement>('[data-article]');
+
+  input?.addEventListener('input', () => {
+    const q = input.value.toLowerCase().trim();
+    let visible = 0;
+    cards.forEach((card) => {
+      const match = !q || card.dataset.title!.includes(q) || card.dataset.desc!.includes(q);
+      card.hidden = !match;
+      if (match) visible++;
+    });
+    empty.classList.toggle('hidden', visible > 0);
+  });
+</script>

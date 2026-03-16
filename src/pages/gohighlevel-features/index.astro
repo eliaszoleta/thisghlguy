@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import ArticleCard from '@/components/ArticleCard.astro';
+import CategorySearch from '@/components/CategorySearch.astro';
 import Breadcrumb from '@/components/Breadcrumb.astro';
 import { getCollection } from 'astro:content';
 
@@ -39,14 +39,6 @@ const collectionSchema = {
       </p>
     </header>
 
-    {sorted.length > 0 ? (
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {sorted.map((article) => <ArticleCard article={article} />)}
-      </div>
-    ) : (
-      <div class="text-center py-20 text-gray-500">
-        <p class="text-lg">Articles coming soon. Check back shortly!</p>
-      </div>
-    )}
+    <CategorySearch articles={sorted} />
   </div>
 </BaseLayout>
