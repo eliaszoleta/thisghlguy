@@ -15,36 +15,48 @@ const categories = [
     label: 'GoHighLevel Basics',
     desc: "New to GHL? Start here. Pricing, reviews, and who it's for.",
     icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>`,
+    color: 'bg-blue-50 border-blue-200 hover:border-blue-400',
+    iconBg: 'bg-blue-100 text-blue-700',
   },
   {
     slug: 'gohighlevel-features',
     label: 'Features',
     desc: 'Deep dives into CRM, funnels, email, SMS, pipelines, and more.',
     icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" /></svg>`,
+    color: 'bg-purple-50 border-purple-200 hover:border-purple-400',
+    iconBg: 'bg-purple-100 text-purple-700',
   },
   {
     slug: 'gohighlevel-automation',
     label: 'Automation',
     desc: 'Build powerful workflows that run your business on autopilot.',
     icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg>`,
+    color: 'bg-green-50 border-green-200 hover:border-green-400',
+    iconBg: 'bg-green-100 text-green-700',
   },
   {
     slug: 'gohighlevel-saas',
     label: 'SaaS Mode',
     desc: 'White-label GHL and resell it as your own SaaS product.',
     icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z" /></svg>`,
+    color: 'bg-orange-50 border-orange-200 hover:border-orange-400',
+    iconBg: 'bg-orange-100 text-orange-700',
   },
   {
     slug: 'gohighlevel-comparisons',
     label: 'Comparisons',
     desc: 'GHL vs ClickFunnels, HubSpot, ActiveCampaign, and more.',
     icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" /></svg>`,
+    color: 'bg-red-50 border-red-200 hover:border-red-400',
+    iconBg: 'bg-red-100 text-red-700',
   },
   {
     slug: 'gohighlevel-tutorials',
     label: 'Tutorials',
     desc: 'Step-by-step guides to set up and master GoHighLevel.',
     icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" /></svg>`,
+    color: 'bg-teal-50 border-teal-200 hover:border-teal-400',
+    iconBg: 'bg-teal-100 text-teal-700',
   },
 ];
 
@@ -105,20 +117,20 @@ const homeSchema = {
         <h2 class="text-3xl font-bold text-gray-900 mb-3">Browse by Topic</h2>
         <p class="text-gray-600 max-w-xl mx-auto">Whether you're just starting or scaling your SaaS, we have the guides you need.</p>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {categories.map((cat) => (
           <a
             href={`/${cat.slug}/`}
-            class="group flex items-start gap-4 p-6 bg-white rounded-2xl border border-gray-200 hover:border-brand-500 hover:shadow-lg transition-all duration-200"
+            class={`group flex items-start gap-4 p-6 rounded-xl border-2 transition-all duration-200 ${cat.color}`}
           >
-            <span class="w-12 h-12 flex items-center justify-center rounded-xl bg-brand-600 text-white flex-shrink-0 group-hover:bg-brand-700 transition-colors">
+            <span class={`w-12 h-12 flex items-center justify-center rounded-xl flex-shrink-0 ${cat.iconBg}`}>
               <Fragment set:html={cat.icon} />
             </span>
             <div>
               <h3 class="font-bold text-gray-900 text-lg mb-1 group-hover:text-brand-700 transition-colors">
                 {cat.label}
               </h3>
-              <p class="text-sm text-gray-500 leading-relaxed">{cat.desc}</p>
+              <p class="text-sm text-gray-600">{cat.desc}</p>
             </div>
           </a>
         ))}
