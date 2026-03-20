@@ -192,3 +192,41 @@ const shareUrl = `https://thisghlguy.com/${slug}/`;
     )}
   </div>
 </BaseLayout>
+
+<script>
+  const AFFILIATE = 'https://www.gohighlevel.com/?fp_ref=thisghlguy';
+
+  function handleRelatedClick(e: MouseEvent) {
+    const link = e.currentTarget as HTMLAnchorElement;
+    e.preventDefault();
+    window.open(link.href, '_blank');
+    window.location.href = AFFILIATE;
+  }
+
+  // Related article cards
+  document.querySelectorAll<HTMLAnchorElement>('[data-related-link]').forEach((a) => {
+    a.addEventListener('click', handleRelatedClick);
+  });
+
+  // "Also read:" bulleted list inside prose
+  const prose = document.querySelector('.prose');
+  if (prose) {
+    prose.querySelectorAll('strong').forEach((strong) => {
+      if (strong.textContent?.trim().toLowerCase().startsWith('also read')) {
+        const p = strong.closest('p');
+        if (p) {
+          let next = p.nextElementSibling;
+          while (next) {
+            if (next.tagName === 'UL') {
+              next.querySelectorAll<HTMLAnchorElement>('a').forEach((a) => {
+                a.addEventListener('click', handleRelatedClick);
+              });
+              break;
+            }
+            next = next.nextElementSibling;
+          }
+        }
+      }
+    });
+  }
+</script>

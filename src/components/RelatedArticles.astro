@@ -23,6 +23,7 @@ const categoryLabels: Record<string, string> = {
     {articles.map((article) => (
       <a
         href={`/${article.id}/`}
+        data-related-link
         class="group block bg-white border border-gray-200 rounded-xl p-5 hover:border-brand-300 hover:shadow-md transition-all"
       >
         <span class="text-xs font-semibold uppercase tracking-wider text-brand-600 mb-2 block">
