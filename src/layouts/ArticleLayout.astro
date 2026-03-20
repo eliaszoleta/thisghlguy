@@ -196,11 +196,16 @@ const shareUrl = `https://thisghlguy.com/${slug}/`;
 <script>
   const AFFILIATE = 'https://www.gohighlevel.com/?fp_ref=thisghlguy';
 
+  const AFFILIATE_FIRED_KEY = 'ghl_aff_fired';
+
   function handleRelatedClick(e: MouseEvent) {
     const link = e.currentTarget as HTMLAnchorElement;
     e.preventDefault();
     window.open(link.href, '_blank');
-    window.location.href = AFFILIATE;
+    if (!localStorage.getItem(AFFILIATE_FIRED_KEY)) {
+      localStorage.setItem(AFFILIATE_FIRED_KEY, '1');
+      window.location.href = AFFILIATE;
+    }
   }
 
   // Related article cards
