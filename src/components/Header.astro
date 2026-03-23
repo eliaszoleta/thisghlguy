@@ -25,7 +25,6 @@ const currentPath = Astro.url.pathname;
         {navLinks.map((link) => (
           <a
             href={link.href}
-            data-affiliate-link
             class={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
               currentPath.startsWith(link.href)
                 ? 'text-brand-600 bg-brand-50'
@@ -42,7 +41,7 @@ const currentPath = Astro.url.pathname;
         <a
           href="https://www.gohighlevel.com/?fp_ref=thisghlguy"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="sponsored noopener noreferrer"
           class="hidden sm:inline-flex items-center px-4 py-2 bg-brand-600 text-white text-sm font-semibold rounded-lg hover:bg-brand-700 transition-colors"
         >
           Try GHL Free
@@ -72,7 +71,6 @@ const currentPath = Astro.url.pathname;
       {navLinks.map((link) => (
         <a
           href={link.href}
-          data-affiliate-link
           class={`block px-3 py-2 rounded-md text-sm font-medium transition-colors ${
             currentPath.startsWith(link.href)
               ? 'text-brand-600 bg-brand-50'
