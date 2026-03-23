@@ -42,6 +42,7 @@ const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: 'ThisGHLGuy',
+  alternateName: 'ThisGHLGuy - GoHighLevel Resource',
   url: siteUrl,
   description: 'The complete GoHighLevel resource for agencies and SaaS builders.',
   potentialAction: {
@@ -51,7 +52,23 @@ const websiteSchema = {
   },
 };
 
-const schemas = [websiteSchema];
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'ThisGHLGuy',
+  url: siteUrl,
+  logo: {
+    '@type': 'ImageObject',
+    url: `${siteUrl}/thisghlguy-logo.png`,
+    width: 512,
+    height: 512,
+  },
+  sameAs: [
+    'https://thisghlguy.com',
+  ],
+};
+
+const schemas = [websiteSchema, organizationSchema];
 if (articleSchema) schemas.push(articleSchema);
 if (breadcrumbSchema) {
   schemas.push({
@@ -94,6 +111,7 @@ for (const s of extraSchemas) schemas.push(s);
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:image" content={fullOgImage} />
+    <meta property="og:image:alt" content={`${title} | ThisGHLGuy`} />
     <meta property="og:site_name" content="ThisGHLGuy" />
     {publishDate && <meta property="article:published_time" content={publishDate.toISOString()} />}
     {updatedDate && <meta property="article:modified_time" content={updatedDate.toISOString()} />}
@@ -103,6 +121,8 @@ for (const s of extraSchemas) schemas.push(s);
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={fullOgImage} />
+    <meta name="twitter:image:alt" content={`${title} | ThisGHLGuy`} />
+    <meta name="twitter:site" content="@ThisGHLGuy" />
 
     <!-- Favicons -->
     <link rel="shortcut icon" href="/favicon.ico" />

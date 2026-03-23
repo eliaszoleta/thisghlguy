@@ -79,6 +79,12 @@ const articleSchema = {
     '@type': 'Organization',
     name: 'ThisGHLGuy',
     url: siteUrl,
+    logo: {
+      '@type': 'ImageObject',
+      url: `${siteUrl}/thisghlguy-logo.png`,
+      width: 512,
+      height: 512,
+    },
   },
 };
 
@@ -90,7 +96,7 @@ const shareUrl = `https://thisghlguy.com/${slug}/`;
 ---
 
 <BaseLayout
-  title={title}
+  title={`${title} | ThisGHLGuy`}
   description={description}
   keywords={keywords}
   canonical={`/${slug}/`}
