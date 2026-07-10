@@ -6,7 +6,10 @@ export default defineConfig({
   site: 'https://thisghlguy.com',
   integrations: [
     tailwind(),
-    sitemap(),
+    sitemap({
+      filter: (page) =>
+        !['/search/', '/privacy-policy/', '/terms/'].some((path) => page.endsWith(path)),
+    }),
   ],
   output: 'static',
 });
