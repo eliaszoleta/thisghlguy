@@ -25,6 +25,12 @@
       "source": "/sitemap.xml",
       "destination": "/sitemap-index.xml",
       "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.thisghlguy.com" }],
+      "destination": "https://thisghlguy.com/:path*",
+      "permanent": true
     }
   ]
 }
