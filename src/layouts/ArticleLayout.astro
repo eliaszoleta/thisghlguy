@@ -58,10 +58,10 @@ const breadcrumbSchema = breadcrumbItems.map((item, i) => ({
   '@type': 'ListItem',
   position: i + 1,
   name: item.name,
-  item: `https://thisghlguy.com${item.url}`,
+  item: `https://www.thisghlguy.com${item.url}`,
 }));
 
-const siteUrl = 'https://thisghlguy.com';
+const siteUrl = 'https://www.thisghlguy.com';
 const articleImage = ogImage
   ? (ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`)
   : `${siteUrl}/og-default.png`;
@@ -92,7 +92,7 @@ const articleSchema = {
 const allArticles = await getCollection('articles');
 const relatedData = allArticles.filter((a) => relatedArticles.includes(a.id));
 
-const shareUrl = `https://thisghlguy.com/${slug}/`;
+const shareUrl = `https://www.thisghlguy.com/${slug}/`;
 ---
 
 <BaseLayout

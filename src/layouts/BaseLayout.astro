@@ -34,7 +34,7 @@ const {
   noindex = false,
 } = Astro.props;
 
-const siteUrl = 'https://thisghlguy.com';
+const siteUrl = 'https://www.thisghlguy.com';
 const canonicalURL = canonical ? `${siteUrl}${canonical}` : Astro.url.href;
 const fullOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
 
@@ -64,7 +64,7 @@ const organizationSchema = {
     height: 512,
   },
   sameAs: [
-    'https://thisghlguy.com',
+    'https://www.thisghlguy.com',
   ],
 };
 
